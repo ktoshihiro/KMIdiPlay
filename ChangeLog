@@ -1,0 +1,39 @@
+KMidiPlay
+Copyright © 1999-2000 KISAKA Toshihiro.
+noah@gopherwood.com
+
+
+2000-05-16
+表面的にはほとんど何も変わっていません。内部的には MidiRoster まわりとか Endpoint の接続やら何やらの定型処理を全部ライブラリに追い出して他の小物と共通にしました。エンバグの可能性大。
+
+2000-05-08
+情報表示のとこに Score ってのを追加。 "Score : 88" とかでても、それは 88 点っていう訳じゃなくて、 SC88 用のデータだよって事なのでちうい。 GM Score とかっていうときの score です。何用の SMF かってことの、まぁ目安です。 initialize の system exclusive があればそれを表示するだけです。出てくるのは GM, GM2, GS, 88, XG それと unknown 。
+
+内部でのデータの持たせ方をちょっと変えたけど、あんまり違いはないみたい。
+
+MidiEndpoint の property に "gopherwood:group_name" ってのがあると、それで Ports メニューをグループ化するってな感じになってます。そんな property 付けるやつは usb_midi_server しかないけど(笑
+
+midi_server が提供している、っていうか /dev/midi のしたに出てくる midi port に関しては、 device file の path 名でもって適当にグループ化して Ports メニューに表示してます。
+
+2000-04-25
+KMidiPlay と改名。
+もろもろ (一番派手なのは system exclusive まわり) の bug fix 。
+
+2000-04-22
+KSMFProducer だと SMF を作るアプリケーションみたいなので、 KMIDI と改名。
+連続再生するようにしてみた。
+
+2000-03-31
+三ヶ月半の放置の後、なんとなく公開
+
+1999-11-13
+何か bug fix したらしい(忘れた)
+
+1999-11-12
+New Midi Kit には BMidiStore 的なものが無かったのでうりゃと作成
+
+
+KT
+--
+KISAKA Toshihiro  -==-  BeOS Developer ID: #2214
+Kanagawa, Japan  -==-  http://www.gopherwood.com
